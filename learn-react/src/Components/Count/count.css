@@ -11,10 +11,24 @@
     height: 80vh;
 }
 
+.heading1 {
+    text-align: center;
+    font-size: 6em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .heading {
     text-align: center;
     font-size: 12em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-inc {
+    margin-right: 2em;
+}
+
+.btn-reset {
+    margin-right: 2em;
 }
 
 .btn {
@@ -27,7 +41,7 @@
     padding: 1rem 6rem;
     box-shadow: 0 12px 18px 0 rgb(192, 192, 192);
     border-radius: 8px;
-    transition: all .3s ease-in-out;
+    transition: all ease-in-out;
 }
 
 .btn:active {
