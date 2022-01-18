@@ -5,7 +5,7 @@ const crudSchema = new mongoose.Schema({
     age: { type: Number, require: true },
     email: { type: String },
     blog: { type: String, require: true },
-    date: { type: Date, default: Date.now }
+    date: { type: Date, default: Date.now() }
 });
 
 const crudModel = new mongoose.model("crudTest", crudSchema);
