@@ -1,12 +1,19 @@
 const Router = require('express').Router();
 const crudModel = require("../Model/crudModel");
 
-Router.get("/", async (req, res) => {
+Router.post("/insert", async (req, res) => {
+    const crudName = req.body.crudName;
+    const crudAge = req.body.crudAge;
+    const crudEmail = req.body.crudEmail;
+    const crudBlog = req.body.crudBlog;
+
     const blog = new crudModel({
-        name: "DP",
-        age: 21,
-        blog: "This is my second blog for testing my application."
+        name: crudName,
+        age: crudAge,
+        email: crudEmail,
+        blog: crudBlog,
     });
+
     try {
         await blog.save();
         console.log("Your data is inserted");
