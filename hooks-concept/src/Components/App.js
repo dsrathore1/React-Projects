@@ -8,8 +8,6 @@ const App = () => {
     const changeName = () => {
         let val = myName;
         (val === "King") ? setMyName("DS King") : setMyName("King"); //! Ternary Operation
-
-        
     }
     return (
         <div className='container'>
