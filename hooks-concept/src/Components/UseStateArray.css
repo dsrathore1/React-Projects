@@ -11,17 +11,20 @@
     align-items: center;
     background: #33333f;
     flex-direction: column;
+    width: 100%;
 }
 
 .one {
     color: #46bbff;
     background: #ccf1ff;
-    text-align: center;
-    padding: .8rem 8rem ;
+    text-align: left;
+    padding: .8rem 8rem;
     border-radius: 55px;
-    
+    margin-top: 2rem;
     box-shadow: 0px 18px 20px 0 rgb(37, 37, 37);
+    
 }
+
 
 .btn {
     background: #46bbff;
