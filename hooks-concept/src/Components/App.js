@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import '../Components/AppStyle.css'
-
-
+import '../Assets/CSS/AppStyle.css';
 
 const App = () => {
     const [myName, setMyName] = useState("King");
