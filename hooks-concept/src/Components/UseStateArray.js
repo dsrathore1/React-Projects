@@ -20,11 +20,27 @@ const UseStateArray = () => {
     const clearData = () => {
         setmydata([]);
     }
+
+    const removeElem = (id) => {
+        const myNewData = mydata.filter((curElem) => {
+            return curElem.id !== id;
+        }); //! Filter function filter the element and eliminate from the data
+
+        setmydata(myNewData);
+    }
+
     return (
         <>
             <div className="container">
                 {mydata.map((curElem) => {
-                    return (<h1 className='one heading' id={curElem.id}>Name: {curElem.Name} & Age: {curElem.Age}</h1>);
+                    return (
+                        <div className="inputContainer" key={curElem.id}>
+                            <div className="inlineContainer">
+                                <h1 className='one heading'>Name: {curElem.Name} & Age: {curElem.Age}</h1>
+                                <button className="removeBtn" onClick={() => removeElem(curElem.id)}>Remove</button>
+                            </div>
+                        </div>
+                    );
                 })
                 }
                 <button className='btn' onClick={clearData}>Clear</button>
