@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.formContainer {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    background: #242121;
+}
+
+.container {
+    font-size: 20px;
+    background: #836efd;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem 5rem 3rem;
+    border-radius: 24px;
+    box-shadow: 9px 12px 18px 0 #2c2929;
+}
+
+.pwd {
+    margin-top: 3rem;
+}
+
+label {
+    margin-bottom: .6rem;
+}
+
+input {
+    border: none;
+    font-size: 18px;
+    padding-left: .7rem;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+    outline: none;
+    border-radius: 8px;
+}
+
+.loginBtn {
+    margin-top: 2rem;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    padding: .4rem 4rem;
+    background: #b4acff;
+    transition: all .2s ease-in-out;
+    box-shadow: -7px 6px 18px 0 #3b3b3b80;
+}
+
+.loginBtn:active {
+    transform: translateY(3px);
+}
+
+.showDetails{
+    margin-top: 6rem;
+
+}
+
+.Details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background: #8781ca;
+    box-shadow: 7px 12px 18px 0 #202020a9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: .3rem 1rem;
+    border-radius: 3px;
+}
+
+.emailD {
+    padding-right: 25rem;
+}
