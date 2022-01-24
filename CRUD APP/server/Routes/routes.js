@@ -24,4 +24,14 @@ Router.post("/insert", async (req, res) => {
     }
 });
 
+
+Router.get("/read", (req, res)=>{
+    crudModel.find({}, (error, result)=>{
+        if(error){
+            res.send(error);
+        }
+        res.send(result);
+    })
+})
+
 module.exports = Router;
