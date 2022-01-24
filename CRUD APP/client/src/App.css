@@ -1,6 +1,14 @@
 .App {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
+::-webkit-scrollbar{
+  display: none;
+  scroll-behavior: smooth;
+}
+
 .container{
   display: flex;
   flex-direction: column;
@@ -15,12 +23,15 @@ label {
 
 input,
 textarea {
-  padding: .7rem 9rem .7rem .5rem;
+  /* padding: .7rem 9rem .7rem .5rem; */
+  padding-left: .5rem;
+  width: 35%;
+  padding-top: .7rem;
+  padding-bottom: .7rem;
   margin-top: 1rem;
 }
 
 .ageI{
-  padding: .7rem 8rem;
   text-align: center;
 }
 
@@ -32,4 +43,9 @@ textarea {
   padding: .8rem 7rem;
   border-radius: 4px;
   color: white;
+}
+
+.heading2{
+  text-align: center;
+  margin-top: 4rem;
 }
