@@ -25,13 +25,34 @@ Router.post("/insert", async (req, res) => {
 });
 
 
-Router.get("/read", (req, res)=>{
-    crudModel.find({}, (error, result)=>{
-        if(error){
+Router.get("/read", (req, res) => {
+    crudModel.find({}, (error, result) => {
+        if (error) {
             res.send(error);
         }
         res.send(result);
     })
+});
+
+Router.put("/update", async (req, res) => {
+    const newName = req.body.newName;
+    const id = req.body.id;
+
+    try {
+        await crudModel.findById(id, (err, updateName) => {
+            updateName.crudName = newName;
+            updateName.save();
+            res.send("update");
+        })
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+Router.delete("/delete/:id", async (req, res) => {
+    const id = req.params.id;
+
+    await crudModel.findByIdAndRemove(id).exec();
 })
 
 module.exports = Router;

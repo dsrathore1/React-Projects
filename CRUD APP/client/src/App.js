@@ -8,12 +8,12 @@ function App() {
   const [crudAge, setCRUDAge] = useState(0);
   const [crudEmail, setCRUDEmail] = useState('');
   const [crudBlog, setCRUDBlog] = useState('');
-
+  const [crudNewData, setCRUDNewData] = useState('');
   const [crudList, setCURDList] = useState([]);
 
   useEffect(() => {
     axios.get("http://localhost:4000/read").then((res) => {
-      setCURDList([res.data]);
+      setCURDList(res.data, ...res.data);
       console.log(res);
     });
   }, []);
@@ -37,6 +37,18 @@ function App() {
     });
   };
 
+  const updateData = (id) => {
+    axios.put("http://localhost:4000/update",
+      {
+        id: id,
+        newData: crudNewData
+      })
+  }
+  const deleteData = (id) => {
+    axios.delete(`http://localhost:4000/delete/${id}`, {
+      
+    })
+  }
 
   return (
     <div className="App">
@@ -59,21 +71,33 @@ function App() {
           setCRUDBlog(event.target.value)
         }} />
         <button className="btn" onClick={addData}>Click Me</button>
-      </div>
-      <h1 className='heading2'>CRUD LIST</h1>
-      <div className="crudList">
-        {
-          crudList.map((curElem, key) => {
-            return (
-              <div key={key} className="list">
-                <h1> {curElem.crudName} </h1>
-                <h2> {curElem.crudAge} </h2>
-                <h2> {curElem.crudEmail} </h2>
-                <h2> {curElem.crudBlog} </h2>
-              </div>
-            );
-          })
-        }
+
+        <h1 className='heading2'>CRUD LIST</h1>
+        <div className="crudList">
+          {
+            crudList.map((curElem, key) => {
+              return (
+                <div key={key} className="list">
+                  <h1>  {curElem.crudName} </h1>
+                  <h2> {curElem.crudAge} </h2>
+                  <h2> {curElem.crudEmail} </h2>
+                  <h2> {curElem.crudBlog} </h2>
+                  <input type="text" placeholder='New Food name' onclick={(event) => {
+                    setCRUDNewData(event.target.value);
+                  }} />
+                  <button className="updateBtn" onClick={() => {
+                    updateData(curElem._id)
+                  }} >Update</button>
+                  <button className="deleteBtn" onClick={() => {
+                    deleteData(curElem._id)
+                  }} >Delete</button>
+                  <br />
+                  <br />
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     </div>
   );
